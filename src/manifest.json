@@ -1,5 +1,5 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "AutoScroll",
   "version": "4.10",
   "description": "This extension adds customizable autoscroll support to Chrome.",
@@ -14,8 +14,8 @@
     "storage"
   ],
   "background": {
-    "scripts": [ "main.js" ],
-    "persistent": false
+    "service_worker": "main.js",
+    "type": "module"
   },
   "options_page": "data/options.html",
   "content_scripts": [{
@@ -25,6 +25,10 @@
     "run_at": "document_end"
   }],
   "web_accessible_resources": [
-    "data/images/origin/*.svg"
+    {
+      "resources": [
+          "data/images/origin/*.svg"
+      ]
+    }
   ]
 }
