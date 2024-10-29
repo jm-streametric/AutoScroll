@@ -1,12 +1,23 @@
 "use strict";
 
-if ("Options.config.user" in localStorage) {
-  var o = JSON.parse(localStorage["Options.config.user"])
-  chrome.storage.local.set(o, function () {
-    delete localStorage["Options.config.user"]
-  })
+const LS = chrome.storage.local;
+
+
+
+async function removeOptions() {
+
+  if ("Options.config.user" in await LS.get()) {
+  
+    var o = JSON.parse(LS.get("Options.config.user")["Options.config.user"])
+    LS.set(o, function () {
+      LS.remove(["Options.config.user"])
+    })
+  }
+  
+  if ("Options.config.base" in await LS.get()) {
+    LS.remove(["Options.config.base"])
+  }
+
 }
 
-if ("Options.config.base" in localStorage) {
-  delete localStorage["Options.config.base"]
-}
+removeOptions()

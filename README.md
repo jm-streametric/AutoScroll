@@ -3,6 +3,17 @@ AutoScroll
 
 For users on Linux or Mac, the lack of autoscroll can be a big pain. This extension can help!
 
+
+To Install From File
+====================
+1. Download the [AutoScroll.crx](https://github.com/jm-streametric/AutoScroll/releases/latest/download/AutoScroll.crx) extension file from releases.
+2. On Chrome, open the [extensions page](chrome://extensions)
+3. Enable developer mode (switch on the top right corner)
+4. Restart Chrome
+5. Drag and drop the .crx file into the extensions page
+6. If Chrome says this extension couldn't be verified, click the three dots next to AutoScroll and then click "keep this extension"
+7. You may disable developer mode if you want
+
 Intentional differences with Firefox
 ====================================
 
